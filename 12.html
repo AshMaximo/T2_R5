@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Escribe un programa en el que se solicite al usuario que escriba un título para una página. 
+    A continuación se abrirá una nueva ventana de 400 píxeles de alto por 500 píxeles de ancho, 
+    en la que se podrá leer el título ingresado por el usuario.
+    La nueva ventana ha de visualizarse arriba y a la derecha de la pantalla del usuario.
+    La ventana principal ha de contener un botón cerrar ventana, que permita cerrar la ventana secundaria.-->
+    <button onclick="cerrar()">Cerrar</button>
+    <script>
+      const titulo = prompt("Dime un titulo");
+      //Abre una ventana nueva
+      const abrir = window.open("", "", "width=400,height=500");
+      //Esto mueve la ventana emergente a donde le diga con los parametros
+      abrir.moveTo(window.screen.availWidth, 0);
+
+      abrir.document.write(titulo);
+        //le damos funcionalidad al boton 
+      function cerrar() {
+        abrir.close();
+      }
+    </script>
+  </body>
+</html>

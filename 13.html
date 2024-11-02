@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Secundaria</title>
+    <script>
+      var ventanaSecundaria;
+      //Abre una ventana nueva
+      function abrir() {
+      ventanaSecundaria = window.open("", "", "width=400,height=500");
+    // Contenido de la ventana secundaria
+    ventanaSecundaria.document.write(
+      '<button onclick="cerrar()">Cerrar</button> <script> function cerrar() {window.close();}<\/script><p id="mensaje"></p>'
+
+    )}; 
+    // Función para enviar un mensaje a la ventana secundaria
+      function enviarMensaje() {
+            if (ventanaSecundaria && !ventanaSecundaria.closed) {
+                ventanaSecundaria.document.getElementById("mensaje").textContent = "Mensaje desde la ventana principal";
+            } else {
+                alert("La ventana secundaria no está abierta.");
+            }
+        }
+      function cerrar() {
+        ventanaSecundaria.close();
+      }
+    </script>
+</head>
+<body>
+
+    <h1>Ventana Principal</h1>
+    <button onclick="abrir()">Abrir</button>
+    <button onclick="cerrar()">Cerrar</button>
+    <button onclick="enviarMensaje()">Enviar mensaje a la ventana secundaria</button>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirección</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .countdown {
+            font-size: 40px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Hemos cambiado de ubicación esta página. En breves momentos será redireccionado...</h1>
+        <div class="countdown" id="countdown">5</div>
+    </div>
+
+    <script>
+        // Tiempo inicial en segundos
+        let timeLeft = 5;
+
+        // Función para actualizar la cuenta atrás
+        function updateCountdown() {
+            // Decrementa el tiempo restante
+            timeLeft--;
+            // Muestra el tiempo restante en el elemento con id "countdown"
+            document.getElementById("countdown").textContent = timeLeft;
+
+            // Si el tiempo llega a 0, redirige al usuario
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                window.location.href = "http://www.pccomponentes.com";
+            }
+        }
+
+        // Llama a la función cada segundo
+        let timer = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

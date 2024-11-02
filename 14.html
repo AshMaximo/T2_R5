@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+        var ventanaSecundaria;
+        function abrirVentanas() {
+            for (let i = 0; i < 5; i++){
+            abrirVentanas = window.open("", "", "width=400,height=500").document.write(
+      '<h2>Ventana' + i + '</h2><button onclick="cerrar()">Cerrar</button> <script> function cerrar() {window.close();}<\/script>'
+
+    )
+            ;}
+                }
+    </script>
+  </head>
+  <body>
+    <div class="link" onclick="abrirVentanas()">Haz clic aquí</div>
+  </body>
+</html>
